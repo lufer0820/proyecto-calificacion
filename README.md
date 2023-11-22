@@ -1,4 +1,4 @@
-# Proyecto de Software de Calificación de Alumnos.
+# Proyecto 3 Software de Gestión de notas.
 
 
 # Descripción
