@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Información</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+</head>
+<body class="container text-center">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <h1 class="mt-5">Edición de la Información del Profesor</h1>
+    <p class="text-start mt-3">Digilencie los datos para editar la información del profesor.</p>
+    <form th:action="@{/profesor/teacher/EditInformation/Confirm}" method="post" th:object="${informacion}">
+
+        <label for="name">Ingrese el nombre del estudiante.</label>
+        <input class="form-control" type="text" name="name" id="name" th:field="*{name}" placeholder="Nombre del estudiante" required>
+
+        <label for="name">Ingrese los apellidos del estudiante.</label>
+        <input class="form-control" type="text" name="name" id="name" th:field="*{surname}" placeholder="Apellidos del estudiante" required>
+
+        <label for="day">Ingrese el tipo de identificación</label>
+        <select class="form-select" name="day" id="day" th:field="*{id_type}">
+            <option th:value="C.C.">Cédula de Ciudadanía</option>
+            <option th:value="T.I.">Tarjeta de Identificacion</option>
+            <option th:value="C.E.">Cédula de Extranjero</option>
+            <option th:value="CON">Contraseña de la registraduría</option>
+        </select>
+
+        <label for="id">Identificación.</label>
+        <input class="form-control" type="text" name="id" id="id" th:field="*{id}" placeholder="Identificación del profesor" required readonly>
+
+        <label for="direccion">Dirección</label>
+        <input type="text" class="form-control" name="direccion" id="direccion" th:field="*{address}" placeholder="Direccion del profesor" required> 
+
+        <label for="correo">Ingrese el correo electrónico</label>
+        <input type="email" class="form-control" name="correo" id="time" th:field="*{email}" placeholder="Correo electrónico." required>
+        
+        <label for="phone">Ingrese el número de teléfono</label>
+        <input type="text" class="form-control" name="phone" id="phone" th:field="*{phone}" placeholder="Número de Teléfono." maxlength="20">
+
+        <label for="user">Usuario.</label>
+        <input class="form-control" type="text" name="user" id="user" th:field="*{username}" placeholder="Usuario del Profesor" required readonly>
+
+        <label for="contra">Ingrese la nueva contraseña</label>
+        <input type="password" class="form-control" name="contra" id="password" th:field="*{password}" placeholder="Contraseña" required>
+
+        <input type="submit" class="btn btn-warning form-control mt-5" value="Finalizar Registro." onclick="confirmar()"></a>
+    </form>
+
+    <a class="btn btn-primary text-start mt-5" th:href="@{/profesor}">Volver a Inicio</a>
+    <script>
+        function confirmar() {
+            alert("Acuérdese de la ID. \nHaga el proceso de registro de estudiante a la materia con usuario existente\ny use la ID")
+        }
+    </script>
+</body>
+</html>
