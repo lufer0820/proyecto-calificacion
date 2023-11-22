@@ -74,3 +74,4 @@ Si desea ver la información en Swagger, tiene que cambiar dicha anotación por 
 ```
 Sin embargo, tenga en cuenta lo siguiente. Si toma en cuenta esta anotación, la salida va a ser de tipo String y no ResponseEntity por lo que no va a mostrar información alguna acerca de los recursos traídos.
 
+# software-calificacion
